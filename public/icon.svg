@@ -3,8 +3,8 @@
   <path d="M276 96L116 288h156l-20 128 160-192H256l20-128z" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <defs>
     <linearGradient id="gradient" x1="0" y1="0" x2="512" y2="512">
-      <stop offset="0%" stop-color="#E85D3A"/>
-      <stop offset="100%" stop-color="#D4A843"/>
+      <stop offset="0%" stop-color="#105469"/>
+      <stop offset="100%" stop-color="#3F8FA6"/>
     </linearGradient>
   </defs>
 </svg>

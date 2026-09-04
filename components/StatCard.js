@@ -1,4 +1,4 @@
-export default function StatCard({ label, value, unit, color = '#E85D3A', icon }) {
+export default function StatCard({ label, value, unit, color = '#105469', icon }) {
   return (
     <div className="card" style={{ flex: 1, minWidth: 150 }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
@@ -6,7 +6,7 @@ export default function StatCard({ label, value, unit, color = '#E85D3A', icon }
           <div className="label" style={{ marginBottom: 12 }}>{label}</div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 28, fontWeight: 800, color, letterSpacing: -1 }}>{value}</span>
-            {unit && <span style={{ fontSize: 14, color: 'rgba(232, 230, 225, 0.4)', fontWeight: 500 }}>{unit}</span>}
+            {unit && <span style={{ fontSize: 14, color: 'rgba(22, 38, 44, 0.4)', fontWeight: 500 }}>{unit}</span>}
           </div>
         </div>
         {icon && (

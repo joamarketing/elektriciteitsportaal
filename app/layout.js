@@ -1,37 +1,43 @@
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
+import { Inter, Playfair_Display } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-heading',
+})
 
 export const metadata = {
   title: 'Energieportaal',
   description: 'Beheer en verdeling van elektriciteitskosten',
   manifest: '/manifest.json',
-  themeColor: '#0C0F14',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: 'Energieportaal',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover',
-  },
+}
+
+export const viewport = {
+  themeColor: '#105469',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="nl">
+    <html lang="nl" className={`${inter.variable} ${playfairDisplay.variable}`}>
       <head>
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
       <body>
-        <div className="grid-bg" />
-        <div className="glow glow-orange" />
-        <div className="glow glow-blue" />
         {children}
         <Analytics />
       </body>

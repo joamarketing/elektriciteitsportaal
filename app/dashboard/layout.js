@@ -51,7 +51,7 @@ export default function DashboardLayout({ children }) {
         alignItems: 'center', 
         justifyContent: 'center', 
         minHeight: '100vh',
-        color: 'rgba(232, 230, 225, 0.5)'
+        color: 'rgba(22, 38, 44, 0.5)'
       }}>
         Laden...
       </div>

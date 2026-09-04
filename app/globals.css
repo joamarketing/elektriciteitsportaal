@@ -5,27 +5,28 @@
 }
 
 :root {
-  --bg-primary: #0C0F14;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.12);
-  --text-primary: #E8E6E1;
-  --text-secondary: rgba(232, 230, 225, 0.5);
-  --text-muted: rgba(232, 230, 225, 0.4);
-  --accent: #E85D3A;
-  --accent-secondary: #D4A843;
-  --blue: #4A7FB5;
+  --bg-primary: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  --bg-subtle: rgba(16, 84, 105, 0.05);
+  --border-color: rgba(16, 84, 105, 0.14);
+  --border-hover: rgba(16, 84, 105, 0.28);
+  --text-primary: #16262C;
+  --text-secondary: rgba(22, 38, 44, 0.62);
+  --text-muted: rgba(22, 38, 44, 0.45);
+  --accent: #105469;
+  --accent-dark: #0B3D4C;
+  --accent-light: #3F8FA6;
+  --accent-tint: rgba(16, 84, 105, 0.1);
   --green: #6B8F4E;
-  --purple: #9B59B6;
-  --teal: #1ABC9C;
+  --purple: #7D5A8C;
 }
 
 html, body {
   min-height: 100vh;
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'DM Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body), 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -44,67 +45,34 @@ input, select {
   font-size: 16px; /* Prevents zoom on iOS */
 }
 
-.grid-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(232, 93, 58, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 93, 58, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.glow {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.glow-orange {
-  top: -100px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(232, 93, 58, 0.08) 0%, transparent 70%);
-}
-
-.glow-blue {
-  bottom: -150px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(74, 127, 181, 0.06) 0%, transparent 70%);
+h1, h2, h3, h4, h5, h6, .heading-serif {
+  font-family: var(--font-heading), Georgia, 'Times New Roman', serif;
 }
 
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 28px;
-  backdrop-filter: blur(20px);
 }
 
 @media (max-width: 640px) {
   .card {
     padding: 16px;
-    border-radius: 12px;
   }
 }
 
 .card:hover {
-  background: var(--bg-card-hover);
   border-color: var(--border-hover);
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 10px;
-  border: none;
-  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: all 0.2s;
   display: inline-flex;
@@ -115,42 +83,50 @@ input, select {
 
 @media (max-width: 640px) {
   .btn {
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
 
 .btn-primary {
   background: var(--accent);
+  border-color: var(--accent);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #d14e2d;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-hover);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--bg-subtle);
+  border-color: var(--accent);
 }
 
 .btn-danger {
-  background: rgba(220, 53, 69, 0.15);
-  color: #ff6b6b;
-  border: 1px solid rgba(220, 53, 69, 0.3);
+  background: transparent;
+  color: #B3261E;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+}
+
+.btn-danger:hover {
+  background: rgba(220, 53, 69, 0.06);
 }
 
 .input {
   width: 100%;
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
+  padding: 10px 2px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-hover);
+  border-radius: 0;
   color: var(--text-primary);
   font-size: 16px;
   outline: none;
@@ -158,19 +134,24 @@ input, select {
 }
 
 .input:focus {
-  border-color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .input::placeholder {
   color: var(--text-muted);
 }
 
+select.input {
+  padding: 10px 2px;
+  background-image: none;
+}
+
 .label {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
   margin-bottom: 8px;
   display: block;
 }
@@ -195,7 +176,7 @@ input, select {
 
 .table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(16, 84, 105, 0.08);
   font-size: 14px;
 }
 
@@ -204,7 +185,7 @@ input, select {
     padding: 10px 8px;
     font-size: 12px;
   }
-  
+
   .table th {
     font-size: 10px;
   }
@@ -232,19 +213,19 @@ input, select {
 
 .error-message {
   padding: 10px 14px;
-  background: rgba(220, 53, 69, 0.1);
+  background: rgba(220, 53, 69, 0.08);
   border: 1px solid rgba(220, 53, 69, 0.2);
   border-radius: 8px;
-  color: #ff6b6b;
+  color: #B3261E;
   font-size: 13px;
 }
 
 .success-message {
   padding: 10px 14px;
   background: rgba(107, 143, 78, 0.1);
-  border: 1px solid rgba(107, 143, 78, 0.2);
+  border: 1px solid rgba(107, 143, 78, 0.25);
   border-radius: 8px;
-  color: #6B8F4E;
+  color: #4C6B35;
   font-size: 13px;
 }
 

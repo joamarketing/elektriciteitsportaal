@@ -141,7 +141,7 @@ export default function DashboardPage() {
   }
 
   if (loading) {
-    return <div style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Laden...</div>
+    return <div style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Laden...</div>
   }
 
   const isAdmin = profile?.role === 'admin'
@@ -184,10 +184,10 @@ export default function DashboardPage() {
   return (
     <div>
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 800, margin: 0, letterSpacing: -0.5 }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0, letterSpacing: 0 }}>
           Dashboard
         </h2>
-        <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 4, fontSize: 14 }}>
+        <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 4, fontSize: 14 }}>
           {isAdmin ? 'Overzicht elektriciteitsverbruik' : `Welkom terug, ${profile?.display_name}`}
         </p>
       </div>
@@ -198,7 +198,7 @@ export default function DashboardPage() {
           label="Totaal verbruik" 
           value={formatKwh(isAdmin ? totalConsumption : monthlyData.reduce((sum, m) => sum + getMyConsumption(m), 0))} 
           unit="kWh" 
-          color="#4A7FB5" 
+          color="#3F8FA6" 
           icon="M13 2L3 14h9l-1 8 10-12h-9l1-8z" 
         />
         {latestMonth && (
@@ -206,7 +206,7 @@ export default function DashboardPage() {
             label={`${MONTHS_NL[latestMonth.month]} ${latestMonth.year}`}
             value={formatKwh(isAdmin ? latestMonth.totalConsumption : getMyConsumption(latestMonth))} 
             unit="kWh" 
-            color="#E85D3A" 
+            color="#105469" 
             icon="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6v6l4 2" 
           />
         )}
@@ -218,7 +218,7 @@ export default function DashboardPage() {
           Totaal verbruik per maand
         </h3>
         {monthlyData.length === 0 ? (
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>Nog geen verbruik geregistreerd.</p>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>Nog geen verbruik geregistreerd.</p>
         ) : (
           <div className="table-responsive">
             <table className="table">
@@ -255,7 +255,7 @@ export default function DashboardPage() {
                           <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(m.totalConsumption)}
                           </td>
-                          <td style={{ textAlign: 'right', color: 'rgba(232, 230, 225, 0.5)', fontFeatureSettings: "'tnum'" }}>
+                          <td style={{ textAlign: 'right', color: 'rgba(22, 38, 44, 0.5)', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(m.generalConsumption)}
                           </td>
                         </>
@@ -264,13 +264,13 @@ export default function DashboardPage() {
                           <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(myOwnConsumption)}
                           </td>
-                          <td style={{ textAlign: 'right', color: 'rgba(232, 230, 225, 0.5)', fontFeatureSettings: "'tnum'" }}>
+                          <td style={{ textAlign: 'right', color: 'rgba(22, 38, 44, 0.5)', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(m.generalConsumption)}
                           </td>
-                          <td style={{ textAlign: 'right', color: 'rgba(232, 230, 225, 0.5)', fontFeatureSettings: "'tnum'" }}>
+                          <td style={{ textAlign: 'right', color: 'rgba(22, 38, 44, 0.5)', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(myGeneralShare)}
                           </td>
-                          <td style={{ textAlign: 'right', fontWeight: 700, color: profile?.tenant?.color || '#E85D3A', fontFeatureSettings: "'tnum'" }}>
+                          <td style={{ textAlign: 'right', fontWeight: 700, color: profile?.tenant?.color || '#105469', fontFeatureSettings: "'tnum'" }}>
                             {formatKwh(myTotal)}
                           </td>
                         </>
@@ -304,7 +304,7 @@ export default function DashboardPage() {
           </div>
           
           {readingsForYear.length === 0 ? (
-            <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>Geen verbruik geregistreerd voor {selectedYear}.</p>
+            <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>Geen verbruik geregistreerd voor {selectedYear}.</p>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {readingsForYear.map(monthData => (
@@ -313,8 +313,8 @@ export default function DashboardPage() {
                     margin: '0 0 12px', 
                     fontSize: 14, 
                     fontWeight: 700,
-                    color: '#E85D3A',
-                    borderBottom: '1px solid rgba(232, 93, 58, 0.3)',
+                    color: '#105469',
+                    borderBottom: '1px solid rgba(16, 84, 105, 0.3)',
                     paddingBottom: 8
                   }}>
                     {MONTHS_NL[monthData.month]}
@@ -338,10 +338,10 @@ export default function DashboardPage() {
                                 <span style={{ fontSize: 12 }}>{reading.displayName}</span>
                               </div>
                             </td>
-                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(232, 230, 225, 0.5)' }}>
+                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(22, 38, 44, 0.5)' }}>
                               {formatKwh(reading.previous_reading)}
                             </td>
-                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(232, 230, 225, 0.5)' }}>
+                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(22, 38, 44, 0.5)' }}>
                               {formatKwh(reading.current_reading)}
                             </td>
                             <td style={{ textAlign: 'right', fontWeight: 700, color: reading.tenant?.color || '#888', fontFeatureSettings: "'tnum'" }}>
@@ -381,7 +381,7 @@ export default function DashboardPage() {
           </div>
           
           {myReadingsForYear.length === 0 ? (
-            <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>Geen verbruik geregistreerd voor {selectedYear}.</p>
+            <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>Geen verbruik geregistreerd voor {selectedYear}.</p>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {myReadingsForYear.map(monthData => (
@@ -390,8 +390,8 @@ export default function DashboardPage() {
                     margin: '0 0 12px', 
                     fontSize: 14, 
                     fontWeight: 700,
-                    color: profile?.tenant?.color || '#E85D3A',
-                    borderBottom: `1px solid ${profile?.tenant?.color || '#E85D3A'}50`,
+                    color: profile?.tenant?.color || '#105469',
+                    borderBottom: `1px solid ${profile?.tenant?.color || '#105469'}50`,
                     paddingBottom: 8
                   }}>
                     {MONTHS_NL[monthData.month]}
@@ -410,13 +410,13 @@ export default function DashboardPage() {
                         {monthData.readings.map((reading, idx) => (
                           <tr key={`${reading.space}-${idx}`}>
                             <td style={{ fontWeight: 500 }}>{reading.space}</td>
-                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(232, 230, 225, 0.5)' }}>
+                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(22, 38, 44, 0.5)' }}>
                               {formatKwh(reading.previous_reading)}
                             </td>
-                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(232, 230, 225, 0.5)' }}>
+                            <td style={{ textAlign: 'right', fontFeatureSettings: "'tnum'", color: 'rgba(22, 38, 44, 0.5)' }}>
                               {formatKwh(reading.current_reading)}
                             </td>
-                            <td style={{ textAlign: 'right', fontWeight: 700, color: profile?.tenant?.color || '#E85D3A', fontFeatureSettings: "'tnum'" }}>
+                            <td style={{ textAlign: 'right', fontWeight: 700, color: profile?.tenant?.color || '#105469', fontFeatureSettings: "'tnum'" }}>
                               {formatKwh(reading.consumption || 0)}
                             </td>
                           </tr>

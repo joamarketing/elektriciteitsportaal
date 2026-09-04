@@ -92,7 +92,7 @@ export default function InvoicesPage() {
   }
 
   if (loading) {
-    return <div style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Laden...</div>
+    return <div style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Laden...</div>
   }
 
   if (showForm) {
@@ -107,7 +107,7 @@ export default function InvoicesPage() {
           style={{ 
             background: 'transparent', 
             border: 'none', 
-            color: 'rgba(232, 230, 225, 0.5)', 
+            color: 'rgba(22, 38, 44, 0.5)', 
             padding: '8px 0', 
             marginBottom: 16,
             cursor: 'pointer',
@@ -122,7 +122,7 @@ export default function InvoicesPage() {
           Terug
         </button>
 
-        <h2 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 24px', letterSpacing: -0.3 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 24px', letterSpacing: 0 }}>
           {editingInvoice ? 'Factuur bewerken' : 'Nieuwe factuur'}
         </h2>
 
@@ -168,25 +168,25 @@ export default function InvoicesPage() {
           </div>
 
           {amount > 0 && (
-            <div style={{ padding: 16, background: 'rgba(255,255,255,0.03)', borderRadius: 12 }}>
+            <div style={{ padding: 16, background: 'rgba(16, 84, 105, 0.05)', borderRadius: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14 }}>
-                <span style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Factuurbedrag</span>
+                <span style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Factuurbedrag</span>
                 <span>€{formatNumber(amount)}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14 }}>
-                <span style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Marge (10%)</span>
+                <span style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Marge (10%)</span>
                 <span style={{ color: '#6B8F4E' }}>+ €{formatNumber(margeAmount)}</span>
               </div>
               <div style={{ 
                 display: 'flex', 
                 justifyContent: 'space-between', 
                 paddingTop: 12, 
-                borderTop: '1px solid rgba(255,255,255,0.08)',
+                borderTop: '1px solid rgba(16, 84, 105, 0.12)',
                 fontSize: 16,
                 fontWeight: 700
               }}>
                 <span>Te verdelen</span>
-                <span style={{ color: '#E85D3A' }}>€{formatNumber(amountWithMarge)}</span>
+                <span style={{ color: '#105469' }}>€{formatNumber(amountWithMarge)}</span>
               </div>
             </div>
           )}
@@ -211,8 +211,8 @@ export default function InvoicesPage() {
   return (
     <div>
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 800, margin: 0, letterSpacing: -0.5 }}>Facturen</h2>
-        <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 4, fontSize: 14 }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0, letterSpacing: 0 }}>Facturen</h2>
+        <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 4, fontSize: 14 }}>
           Beheer facturen van Luminus
         </p>
       </div>
@@ -226,7 +226,7 @@ export default function InvoicesPage() {
 
       {invoices.length === 0 ? (
         <div className="card" style={{ textAlign: 'center', padding: 40 }}>
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>
             Nog geen facturen ingevoerd.
           </p>
         </div>
@@ -243,15 +243,15 @@ export default function InvoicesPage() {
                   <span style={{ fontSize: 15, fontWeight: 700, display: 'block' }}>
                     {MONTHS_NL[invoice.month]} {invoice.year}
                   </span>
-                  <span style={{ fontSize: 12, color: 'rgba(232,230,225,0.4)' }}>
+                  <span style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.4)' }}>
                     Ref: {invoice.invoice_ref}
                   </span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: 12, color: 'rgba(232,230,225,0.4)' }}>
+                  <div style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.4)' }}>
                     €{formatNumber(invoice.total_amount)}
                   </div>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: '#E85D3A' }}>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: '#105469' }}>
                     €{formatNumber(invoice.amount_with_marge || withMarge(invoice.total_amount))}
                   </div>
                 </div>

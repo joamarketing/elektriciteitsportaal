@@ -38,9 +38,9 @@ export default function NavBar({ user, profile }) {
   return (
     <>
       <nav style={{
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
-        background: 'rgba(12, 15, 20, 0.95)',
-        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(16, 84, 105, 0.12)',
+        background: 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(12px)',
         position: 'sticky',
         top: 0,
         zIndex: 100
@@ -60,17 +60,17 @@ export default function NavBar({ user, profile }) {
               width: 36,
               height: 36,
               borderRadius: 10,
-              background: 'linear-gradient(135deg, #E85D3A, #D4A843)'
+              background: 'linear-gradient(135deg, #105469, #3F8FA6)'
             }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
             </div>
-            <span className="hide-mobile" style={{ fontSize: 18, fontWeight: 800, letterSpacing: -0.3 }}>Energieportaal</span>
+            <span className="hide-mobile heading-serif" style={{ fontSize: 18, fontWeight: 700, letterSpacing: 0, color: 'var(--accent)' }}>Energieportaal</span>
           </div>
 
           {/* Desktop navigation */}
-          <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+          <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
             {navItems.map(item => {
               const isActive = pathname === item.href
               return (
@@ -78,19 +78,18 @@ export default function NavBar({ user, profile }) {
                   key={item.id}
                   href={item.href}
                   style={{
-                    padding: '8px 16px',
+                    padding: '4px 0',
                     fontSize: 13,
                     fontWeight: isActive ? 700 : 500,
-                    background: isActive ? 'rgba(232, 93, 58, 0.15)' : 'transparent',
-                    color: isActive ? '#E85D3A' : 'rgba(232, 230, 225, 0.5)',
-                    borderRadius: 8,
+                    color: isActive ? '#105469' : 'rgba(22, 38, 44, 0.55)',
+                    borderBottom: isActive ? '2px solid #105469' : '2px solid transparent',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 8,
                     transition: 'all 0.2s'
                   }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#E85D3A' : 'rgba(232, 230, 225, 0.4)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#105469' : 'rgba(22, 38, 44, 0.4)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={item.icon} />
                   </svg>
                   {item.label}
@@ -106,16 +105,16 @@ export default function NavBar({ user, profile }) {
                 width: 32,
                 height: 32,
                 borderRadius: 8,
-                background: 'rgba(255, 255, 255, 0.08)',
+                background: 'rgba(16, 84, 105, 0.08)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(232, 230, 225, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(22, 38, 44, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
                 </svg>
               </div>
-              <span style={{ fontSize: 13, color: 'rgba(232, 230, 225, 0.6)' }}>
+              <span style={{ fontSize: 13, color: 'rgba(22, 38, 44, 0.6)' }}>
                 {profile?.display_name || user?.email}
               </span>
             </div>
@@ -125,7 +124,7 @@ export default function NavBar({ user, profile }) {
                 padding: '8px 12px',
                 background: 'transparent',
                 border: 'none',
-                color: 'rgba(232, 230, 225, 0.4)',
+                color: 'rgba(22, 38, 44, 0.4)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center'
@@ -174,7 +173,7 @@ export default function NavBar({ user, profile }) {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(12, 15, 20, 0.98)',
+            background: 'rgba(250, 247, 242, 0.98)',
             backdropFilter: 'blur(20px)',
             zIndex: 99,
             padding: 16,
@@ -194,8 +193,8 @@ export default function NavBar({ user, profile }) {
                     padding: '16px',
                     fontSize: 16,
                     fontWeight: isActive ? 700 : 500,
-                    background: isActive ? 'rgba(232, 93, 58, 0.15)' : 'transparent',
-                    color: isActive ? '#E85D3A' : 'rgba(232, 230, 225, 0.7)',
+                    background: isActive ? 'rgba(16, 84, 105, 0.15)' : 'transparent',
+                    color: isActive ? '#105469' : 'rgba(22, 38, 44, 0.7)',
                     borderRadius: 12,
                     border: 'none',
                     display: 'flex',
@@ -205,7 +204,7 @@ export default function NavBar({ user, profile }) {
                     textAlign: 'left'
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#E85D3A' : 'rgba(232, 230, 225, 0.5)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#105469' : 'rgba(22, 38, 44, 0.5)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={item.icon} />
                   </svg>
                   {item.label}
@@ -219,7 +218,7 @@ export default function NavBar({ user, profile }) {
 
           {/* Mobile user info & logout */}
           <div style={{ 
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)', 
+            borderTop: '1px solid rgba(16, 84, 105, 0.12)',
             paddingTop: 16,
             display: 'flex',
             flexDirection: 'column',
@@ -235,12 +234,12 @@ export default function NavBar({ user, profile }) {
                 width: 40,
                 height: 40,
                 borderRadius: 10,
-                background: 'rgba(255, 255, 255, 0.08)',
+                background: 'rgba(16, 84, 105, 0.08)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(232, 230, 225, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(22, 38, 44, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
                 </svg>
               </div>
@@ -248,7 +247,7 @@ export default function NavBar({ user, profile }) {
                 <div style={{ fontSize: 15, fontWeight: 600 }}>
                   {profile?.display_name || 'Gebruiker'}
                 </div>
-                <div style={{ fontSize: 13, color: 'rgba(232, 230, 225, 0.4)' }}>
+                <div style={{ fontSize: 13, color: 'rgba(22, 38, 44, 0.4)' }}>
                   {user?.email}
                 </div>
               </div>
@@ -260,7 +259,7 @@ export default function NavBar({ user, profile }) {
                 background: 'rgba(220, 53, 69, 0.1)',
                 border: '1px solid rgba(220, 53, 69, 0.2)',
                 borderRadius: 12,
-                color: '#ff6b6b',
+                color: '#B3261E',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',

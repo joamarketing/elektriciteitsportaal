@@ -126,7 +126,7 @@ export default function VerdelingPage() {
   }
 
   if (loading) {
-    return <div style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Laden...</div>
+    return <div style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Laden...</div>
   }
 
   const isAdmin = profile?.role === 'admin'
@@ -143,7 +143,7 @@ export default function VerdelingPage() {
             style={{ 
               background: 'transparent', 
               border: 'none', 
-              color: 'rgba(232, 230, 225, 0.5)', 
+              color: 'rgba(22, 38, 44, 0.5)', 
               padding: '8px 0', 
               marginBottom: 16,
               cursor: 'pointer',
@@ -158,7 +158,7 @@ export default function VerdelingPage() {
             Terug
           </button>
           <div className="card">
-            <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>
+            <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>
               Geen factuur gevonden voor deze maand.
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function VerdelingPage() {
           style={{ 
             background: 'transparent', 
             border: 'none', 
-            color: 'rgba(232, 230, 225, 0.5)', 
+            color: 'rgba(22, 38, 44, 0.5)', 
             padding: '8px 0', 
             marginBottom: 16,
             cursor: 'pointer',
@@ -193,10 +193,10 @@ export default function VerdelingPage() {
         </button>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 800, margin: 0, letterSpacing: -0.5 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0, letterSpacing: 0 }}>
             {MONTHS_NL[data.month]} {data.year}
           </h2>
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 4, fontSize: 13 }}>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 4, fontSize: 13 }}>
             Ref: {data.invoice.invoice_ref}
           </p>
         </div>
@@ -215,13 +215,13 @@ export default function VerdelingPage() {
             </div>
             <div>
               <div className="label">Te verdelen</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#E85D3A' }}>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#105469' }}>
                 €{formatNumber(data.amountWithMarge)}
               </div>
             </div>
             <div>
               <div className="label">Totaal kWh</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#4A7FB5' }}>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#3F8FA6' }}>
                 {formatKwh(data.totalConsumption)}
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function VerdelingPage() {
                       {formatKwh(data.totalConsumption)}
                     </td>
                     <td style={{ textAlign: 'right', paddingTop: 12 }}>100%</td>
-                    <td style={{ textAlign: 'right', fontWeight: 700, color: '#E85D3A', paddingTop: 12 }}>
+                    <td style={{ textAlign: 'right', fontWeight: 700, color: '#105469', paddingTop: 12 }}>
                       €{formatNumber(data.amountWithMarge)}
                     </td>
                   </tr>
@@ -287,17 +287,17 @@ export default function VerdelingPage() {
   return (
     <div>
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 800, margin: 0, letterSpacing: -0.5 }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0, letterSpacing: 0 }}>
           {isAdmin ? 'Verdeling' : 'Mijn Kosten'}
         </h2>
-        <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 4, fontSize: 14 }}>
+        <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 4, fontSize: 14 }}>
           {isAdmin ? 'Kosten per huurder per maand' : 'Je maandelijkse kosten'}
         </p>
       </div>
 
       {monthsWithInvoices.length === 0 ? (
         <div className="card" style={{ textAlign: 'center', padding: 40 }}>
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>
             Nog geen facturen ingevoerd.
           </p>
         </div>
@@ -323,7 +323,7 @@ export default function VerdelingPage() {
                     <span style={{ fontSize: 15, fontWeight: 700, display: 'block' }}>
                       {MONTHS_NL[m.month]} {m.year}
                     </span>
-                    <span style={{ fontSize: 12, color: 'rgba(232,230,225,0.4)' }}>
+                    <span style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.4)' }}>
                       {isAdmin 
                         ? `${formatKwh(data.totalConsumption)} kWh`
                         : myData 
@@ -334,7 +334,7 @@ export default function VerdelingPage() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     {isAdmin ? (
-                      <span style={{ fontSize: 16, fontWeight: 700, color: '#E85D3A' }}>
+                      <span style={{ fontSize: 16, fontWeight: 700, color: '#105469' }}>
                         €{formatNumber(data.amountWithMarge)}
                       </span>
                     ) : myData ? (
@@ -342,9 +342,9 @@ export default function VerdelingPage() {
                         €{formatNumber(myData.amount)}
                       </span>
                     ) : (
-                      <span style={{ color: 'rgba(232,230,225,0.3)' }}>—</span>
+                      <span style={{ color: 'rgba(22, 38, 44, 0.3)' }}>—</span>
                     )}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(232,230,225,0.3)" strokeWidth="2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(22, 38, 44, 0.3)" strokeWidth="2">
                       <path d="M9 18l6-6-6-6" />
                     </svg>
                   </div>

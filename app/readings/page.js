@@ -265,7 +265,7 @@ export default function ReadingsPage() {
   }
 
   if (loading) {
-    return <div style={{ color: 'rgba(232, 230, 225, 0.5)' }}>Laden...</div>
+    return <div style={{ color: 'rgba(22, 38, 44, 0.5)' }}>Laden...</div>
   }
 
   const monthlyReadings = getMonthlyReadings()
@@ -278,7 +278,7 @@ export default function ReadingsPage() {
           style={{ 
             background: 'transparent', 
             border: 'none', 
-            color: 'rgba(232, 230, 225, 0.5)', 
+            color: 'rgba(22, 38, 44, 0.5)', 
             padding: '8px 0', 
             marginBottom: 16,
             cursor: 'pointer',
@@ -293,16 +293,16 @@ export default function ReadingsPage() {
           Terug
         </button>
 
-        <h2 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 8px', letterSpacing: -0.3 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', letterSpacing: 0 }}>
           Initiële meterstanden
         </h2>
-        <p style={{ color: 'rgba(232, 230, 225, 0.5)', marginBottom: 24, fontSize: 14 }}>
+        <p style={{ color: 'rgba(22, 38, 44, 0.5)', marginBottom: 24, fontSize: 14 }}>
           Beginstand per 31 augustus 2025
         </p>
 
-        <div className="card" style={{ marginBottom: 16, borderLeft: '4px solid #9B59B6' }}>
+        <div className="card" style={{ marginBottom: 16, borderLeft: '4px solid #7D5A8C' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-            <div style={{ width: 10, height: 10, borderRadius: 5, background: '#9B59B6' }} />
+            <div style={{ width: 10, height: 10, borderRadius: 5, background: '#7D5A8C' }} />
             <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Algemene meter</h3>
           </div>
           <input
@@ -327,7 +327,7 @@ export default function ReadingsPage() {
 
               return (
                 <div key={space} style={{ marginBottom: 12 }}>
-                  <label style={{ fontSize: 12, color: 'rgba(232,230,225,0.5)', marginBottom: 4, display: 'block' }}>{space}</label>
+                  <label style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.5)', marginBottom: 4, display: 'block' }}>{space}</label>
                   <input
                     type="number"
                     className="input"
@@ -361,7 +361,7 @@ export default function ReadingsPage() {
           style={{ 
             background: 'transparent', 
             border: 'none', 
-            color: 'rgba(232, 230, 225, 0.5)', 
+            color: 'rgba(22, 38, 44, 0.5)', 
             padding: '8px 0', 
             marginBottom: 16,
             cursor: 'pointer',
@@ -376,7 +376,7 @@ export default function ReadingsPage() {
           Terug
         </button>
 
-        <h2 style={{ fontSize: 20, fontWeight: 800, margin: '0 0 24px', letterSpacing: -0.3 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 24px', letterSpacing: 0 }}>
           {editingMonth ? 'Meterstand bewerken' : 'Nieuwe meterstand'}
         </h2>
 
@@ -417,9 +417,9 @@ export default function ReadingsPage() {
           </div>
         </div>
 
-        <div className="card" style={{ marginBottom: 16, borderLeft: '4px solid #9B59B6' }}>
+        <div className="card" style={{ marginBottom: 16, borderLeft: '4px solid #7D5A8C' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-            <div style={{ width: 10, height: 10, borderRadius: 5, background: '#9B59B6' }} />
+            <div style={{ width: 10, height: 10, borderRadius: 5, background: '#7D5A8C' }} />
             <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700 }}>Algemene meter</h3>
           </div>
           
@@ -429,7 +429,7 @@ export default function ReadingsPage() {
             
             return (
               <div>
-                <div style={{ fontSize: 12, color: 'rgba(232,230,225,0.4)', marginBottom: 8 }}>
+                <div style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.4)', marginBottom: 8 }}>
                   Begin: {formatKwh(meter.previous || 0)}
                 </div>
                 <input
@@ -440,7 +440,7 @@ export default function ReadingsPage() {
                   onChange={e => updateMeter('general_Algemeen', e.target.value)}
                 />
                 {consumption > 0 && (
-                  <div style={{ marginTop: 8, fontSize: 14, fontWeight: 700, color: '#9B59B6' }}>
+                  <div style={{ marginTop: 8, fontSize: 14, fontWeight: 700, color: '#7D5A8C' }}>
                     Verbruik: {formatKwh(consumption)} kWh
                   </div>
                 )}
@@ -463,7 +463,7 @@ export default function ReadingsPage() {
 
               return (
                 <div key={space} style={{ marginBottom: 16 }}>
-                  <label style={{ fontSize: 12, color: 'rgba(232,230,225,0.5)', marginBottom: 4, display: 'block' }}>
+                  <label style={{ fontSize: 12, color: 'rgba(22, 38, 44, 0.5)', marginBottom: 4, display: 'block' }}>
                     {space} (begin: {formatKwh(meter.previous || 0)})
                   </label>
                   <input
@@ -499,8 +499,8 @@ export default function ReadingsPage() {
   return (
     <div>
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 800, margin: 0, letterSpacing: -0.5 }}>Meterstanden</h2>
-        <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 4, fontSize: 14 }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0, letterSpacing: 0 }}>Meterstanden</h2>
+        <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 4, fontSize: 14 }}>
           Beheer maandelijkse opnames
         </p>
       </div>
@@ -516,7 +516,7 @@ export default function ReadingsPage() {
 
       {monthlyReadings.length === 0 ? (
         <div className="card" style={{ textAlign: 'center', padding: 40 }}>
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)' }}>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)' }}>
             Nog geen meterstanden ingevoerd.
           </p>
         </div>
@@ -535,7 +535,7 @@ export default function ReadingsPage() {
                     <span style={{ fontSize: 15, fontWeight: 700, display: 'block' }}>
                       {monthData.isInitial ? 'Initieel (31/08/2025)' : `${MONTHS_NL[monthData.month]} ${monthData.year}`}
                     </span>
-                    <span style={{ fontSize: 13, color: 'rgba(232,230,225,0.4)' }}>
+                    <span style={{ fontSize: 13, color: 'rgba(22, 38, 44, 0.4)' }}>
                       {monthData.isInitial ? 'Beginstand' : `${formatKwh(totalConsumption)} kWh`}
                     </span>
                   </div>

@@ -49,26 +49,24 @@ export default function LoginPage() {
             width: 72, 
             height: 72, 
             borderRadius: 20, 
-            background: 'linear-gradient(135deg, #E85D3A, #D4A843)', 
+            background: 'linear-gradient(135deg, #105469, #3F8FA6)', 
             marginBottom: 24,
-            boxShadow: '0 8px 32px rgba(232, 93, 58, 0.3)'
+            boxShadow: '0 8px 32px rgba(16, 84, 105, 0.3)'
           }}>
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </div>
-          <h1 style={{ 
-            fontSize: 32, 
-            fontWeight: 800, 
-            margin: 0, 
-            letterSpacing: -0.5,
-            background: 'linear-gradient(135deg, #E8E6E1, rgba(232, 230, 225, 0.7))',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+          <h1 className="heading-serif" style={{
+            fontSize: 32,
+            fontWeight: 700,
+            margin: 0,
+            letterSpacing: 0,
+            color: 'var(--accent)'
           }}>
             Energieportaal
           </h1>
-          <p style={{ color: 'rgba(232, 230, 225, 0.4)', marginTop: 8, fontSize: 15 }}>
+          <p style={{ color: 'rgba(22, 38, 44, 0.4)', marginTop: 8, fontSize: 15 }}>
             Beheer en verdeling van elektriciteitskosten
           </p>
         </div>
