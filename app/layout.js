@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   title: 'Energieportaal',
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         <div className="glow glow-orange" />
         <div className="glow glow-blue" />
         {children}
+        <Analytics />
       </body>
     </html>
   )
