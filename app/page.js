@@ -42,21 +42,8 @@ export default function LoginPage() {
     }}>
       <div style={{ width: '100%', maxWidth: 420 }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
-            width: 72, 
-            height: 72, 
-            borderRadius: 20, 
-            background: 'linear-gradient(135deg, #105469, #3F8FA6)', 
-            marginBottom: 24,
-            boxShadow: '0 8px 32px rgba(16, 84, 105, 0.3)'
-          }}>
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-mark.png" alt="" width={88} height={88} style={{ display: 'inline-block', marginBottom: 20 }} />
           <h1 className="heading-serif" style={{
             fontSize: 32,
             fontWeight: 700,

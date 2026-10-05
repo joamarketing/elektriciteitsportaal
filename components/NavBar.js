@@ -52,20 +52,9 @@ export default function NavBar({ user, profile }) {
           height: 64 
         }}>
           {/* Logo */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: 36,
-              height: 36,
-              borderRadius: 10,
-              background: 'linear-gradient(135deg, #105469, #3F8FA6)'
-            }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-mark.png" alt="" width={32} height={32} style={{ display: 'block' }} />
             <span className="hide-mobile heading-serif" style={{ fontSize: 18, fontWeight: 700, letterSpacing: 0, color: 'var(--accent)' }}>Energieportaal</span>
           </div>
 
